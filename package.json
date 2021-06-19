@@ -20,9 +20,11 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.8",
     "node-cron": "^3.0.0",
+    "npm": "^7.16.0",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.2",
+    "start": "^5.1.0"
   },
   "type": "module",
   "devDependencies": {
