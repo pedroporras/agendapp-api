@@ -11,4 +11,4 @@ COPY ["." , "."]
 
 RUN npm install --development
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "debug"]
