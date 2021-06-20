@@ -4,8 +4,9 @@
   "description": "agendapp - api project",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=production node --es-module-specifier-resolution=node app.js",
-    "debug": "NODE_ENV=development nodemon --experimental-modules --inspect=0.0.0.0:9229 --es-module-specifier-resolution=node app.js",
+    "start": "NODE_ENV=development node --es-module-specifier-resolution=node app.js",
+    "start:dev": "NODE_ENV=development nodemon --experimental-modules --es-module-specifier-resolution=node app.js",
+    "debug": "NODE_ENV=development nodemon --experimental-modules --es-module-specifier-resolution=node app.js",
     "prod": "NODE_ENV=production node --es-module-specifier-resolution=node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,11 +21,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.8",
     "node-cron": "^3.0.0",
-    "npm": "^7.16.0",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.6.2",
-    "start": "^5.1.0"
+    "sequelize": "^6.6.2"
   },
   "type": "module",
   "devDependencies": {
