@@ -3,19 +3,19 @@ import Error from "../utils/Error";
 import ErrorTypes from "../utils/ErrorTypes";
 
 const create = async ({
-  title,
-  due_date,
+  taskTitle,
+  dueDateTask,
   description,
   responsible,
   collaborators,
 }) => {
   try {
     const task = TaskModel({
-        title,
-        due_date,
-        description,
-        responsible,
-        collaborators
+        title: taskTitle,
+        due_date: dueDateTask,
+        description: description,
+        responsible: responsible,
+        collaborators: collaborators
     });
     await task.save();
     return task;

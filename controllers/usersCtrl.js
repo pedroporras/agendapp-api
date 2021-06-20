@@ -12,6 +12,7 @@ const create = (req, res) => {
 const getAll = async (req, res) => {
   try {
     const users = await usersService.getAll();
+    // TODO: se debe modificar la informacion que se envia
     res.json(users);
   } catch (error) {
     res.status(error.errorStatus).send(error.message);
