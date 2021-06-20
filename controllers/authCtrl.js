@@ -1,3 +1,4 @@
+
 import usersService from '../services/usersServices';
 
 const singin = async (req, res) => {
@@ -21,7 +22,12 @@ const singup = async (req, res) => {
     }
 }
 
+const check = async (req, res) => {
+    res.json({'auth': true});
+}
+
 export default {
     singin,
-    singup
+    singup,
+    check
 }
