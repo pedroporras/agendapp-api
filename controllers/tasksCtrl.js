@@ -39,9 +39,17 @@ const updateStatus = async (req, res) => {
     }
 }
 
+const updateExpiredTasks = async () => {
+    const query = {};
+    const tasksIds = await tasksServices.getActiveTasks(query);
+    const updateResult = await tasksServices.updateExpiredTasks(tasksIds);
+    return {update: "ok"}
+};
+
 export default {
     detail,
     create,
     getAll,
-    updateStatus
+    updateStatus,
+    updateExpiredTasks,
 }

@@ -44,6 +44,41 @@ const detail = async (id) => {
   }
 }
 
+const getActiveTasks = async () => {
+  const query = {
+    status: [1, 2],
+    due_date: {'$lt': new Date() }
+  };
+  try{
+
+  } catch (error) {
+    throw Error({
+      message: error.message || ErrorTypes.DATABASE_QUERY,
+      errorStatus: error.errorStatus,
+      stackTrace: error.stackTrace || error,
+    });
+  }
+  const tasks = await TaskModel.find(query)
+  .populate("responsible", "name email")
+  .exec();
+  return tasks;
+};
+
+const updateExpiredTasks = async (tasksIds) => {
+  try{
+    const ids = tasksIds.map(({id}) => {return id})
+    await TaskModel.updateMany({_id: {$in: ids}}, {$set: {status: 3}}, {multi: true});
+    return {update: "ok"}
+
+  } catch (error) {
+    throw Error({
+      message: error.message || ErrorTypes.DATABASE_QUERY,
+      errorStatus: error.errorStatus,
+      stackTrace: error.stackTrace || error,
+    });
+  }
+};
+
 const getAll = async ({ status, due_date_init, due_date_end }) => {
   try {
     // TODO: filtrar por el usuario responsable (token)
@@ -94,5 +129,7 @@ export default {
   create,
   detail,
   getAll,
-  updateStatus
+  updateStatus,
+  getActiveTasks,
+  updateExpiredTasks
 };
