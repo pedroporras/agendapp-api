@@ -5,4 +5,4 @@ export const TASK_STATUS = {
     2: 'Progress',
     3: 'Due date',
     4: 'Finished'
-}
+} 
