@@ -1,4 +1,4 @@
-FROM node
+FROM node:14
 
 
 COPY ["package.json", "package-lock.json", "/home/node/app/"]
