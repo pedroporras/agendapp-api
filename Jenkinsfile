@@ -1,7 +1,9 @@
 node {
     checkout scm
 
-    def customImage = docker.build("test-image", "${WORKSPACE}/build/development.Dockerfile")
+    def dockerfile = 'development.Dockerfile'
+    /* def customImage = docker.build("test-image", "${WORKSPACE}/build/development.Dockerfile") */
+    def customImage = docker.build("test-image", "-f ${dockerfile} ./build")
 
     customImage.inside {
         sh 'node --version'
