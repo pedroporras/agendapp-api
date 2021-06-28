@@ -5,7 +5,8 @@ ec2-3-137-154-181.us-east-2.compute.amazonaws.com
 
 ## Usuario
 
-user: pedroporras@gmail.com
+user: pedroporras@gmail.
+
 password: 123456
 
 # Dummy
