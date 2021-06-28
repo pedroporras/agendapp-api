@@ -7,7 +7,7 @@
     "start": "NODE_ENV=production node --es-module-specifier-resolution=node app.js",
     "debug": "NODE_ENV=development nodemon --inspect=0.0.0.0:9229 --experimental-modules --es-module-specifier-resolution=node app.js",
     "prod": "NODE_ENV=production node --es-module-specifier-resolution=node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "author": "jsuazag",
   "license": "ISC",
