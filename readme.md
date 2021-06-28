@@ -9,7 +9,7 @@ user: pedroporras@gmail.com
 password: 123456
 
 # Dummy
-dummy
+
 
 # autenticación
 - Login
