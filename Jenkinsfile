@@ -20,6 +20,7 @@ pipeline {
         }
         stage('Build and test') {
             steps {
+                sh 'npm install -g jest'
                 sh 'npm test'
             }
         }
