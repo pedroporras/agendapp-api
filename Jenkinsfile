@@ -3,9 +3,6 @@ pipeline {
         dockerfile{
             filename 'build/development.Dockerfile'
             dir '.'
-            //label 'test-image'
-            //additionalBuildArgs  '--build-arg version=1.0.2'
-            //args '-v /tmp:/tmp'
         }
     }
     stages {
@@ -19,13 +16,10 @@ pipeline {
                 sh 'ls -alh'
                 echo 'Build actual'
                 sh 'ls -alh build'
-
             }
         }
         stage('Build and test') {
             steps {
-                //sh 'docker build -f build/development.Dockerfile -t test-image .'
-                //sh 'docker run --rm -it test-image npm run test'
                 sh 'npm run test'
             }
         }
@@ -36,18 +30,3 @@ pipeline {
         }
     }
 }
-
-/* node {
-
-    stage('Build') { 
-        def dockerfile = 'build/development.Dockerfile'
-
-        def customImage = docker.build("test-image", "-f ${dockerfile} ${WORKSPACE}")
-    }
-    stage('Test') { 
-
-    }
-    stage('Deploy') { 
-    
-    }
-} */
