@@ -11,4 +11,6 @@ COPY ["." , "."]
 
 RUN npm install --development
 
+RUN npm install -g jest
+
 CMD ["npm", "run", "debug"]
