@@ -10,7 +10,7 @@ password: 123456
 
 # Dummy
 
-dummy
+dummy 2
 
 # autenticación
 - Login
