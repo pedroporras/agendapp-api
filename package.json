@@ -6,8 +6,8 @@
   "scripts": {
     "start": "NODE_ENV=production node --es-module-specifier-resolution=node app.js",
     "debug": "NODE_ENV=development nodemon --inspect=0.0.0.0:9229 --experimental-modules --es-module-specifier-resolution=node app.js",
-    "prod": "NODE_ENV=production node --es-module-specifier-resolution=node app.js",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "jsuazag",
   "license": "ISC",
@@ -26,6 +26,7 @@
   },
   "type": "module",
   "devDependencies": {
+    "jest": "^27.0.6",
     "nodemon": "^2.0.7"
   }
 }
